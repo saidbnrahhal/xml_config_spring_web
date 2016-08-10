@@ -3,7 +3,18 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
   <display-name>Archetype Created Web Application</display-name>
-   
+  
+  <!--LoaderListener begin -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/jpaContext.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- LoaderListener end -->
+  
   <servlet>
 		<servlet-name>mainServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
