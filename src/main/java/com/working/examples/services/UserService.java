@@ -15,23 +15,23 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	public void addUser(User user){
-		userRepository.addUser(user);
+		userRepository.save(user);
 	}
 	
 	public void deleteUser(Long id){
-		userRepository.deleteUser(id);
+		userRepository.delete(id);;
 	}
 	
 	public User findUser(Long id){
-		return userRepository.findUser(id);
+		return userRepository.findOne(id);
 	}
 	
 	public void updateUser(User user){
-		userRepository.addUser(user);
+		userRepository.save(user);
 	}
 	
 	public List<User> getAllUsers(){
-			return userRepository.getAllUsers();
+			return userRepository.findAll();
 	}
 	
 }
