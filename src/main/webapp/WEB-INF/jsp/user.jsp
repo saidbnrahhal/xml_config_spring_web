@@ -14,16 +14,8 @@
 	<form:form commandName="user">
 		<table>
 			<tr>
-				<td>first name :</td>
-				<td><form:input path="firstName" /></td>
-			</tr>
-			<tr>
-				<td>last name :</td>
-				<td><form:input path="lastName" /></td>
-			</tr>
-			<tr>
-				<td>email :</td>
-				<td><form:input path="email" /></td>
+				<td>user name :</td>
+				<td><form:input path="username" /></td>
 			</tr>
 			<tr>
 				<td>password :</td>
