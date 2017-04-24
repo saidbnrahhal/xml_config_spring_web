@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+
+    <h:body>
+
+    	<h1>JSF demo</h1>
+
+ 		<h:dataTable value="#{userBean.getUserList()}" var="u"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+
+    		<h:column>
+    			<f:facet name="header">
+    				first Name
+    			</f:facet>
+    				#{u.firstName}
+    		</h:column>
+    		
+    		<h:column>
+    			<f:facet name="header">
+    				last Name
+    			</f:facet>
+    				#{u.lastName}
+    		</h:column>
+
+			<h:column>
+    			<f:facet name="header">
+    				email
+    			</f:facet>
+    				#{u.email}
+    		</h:column>
+    		
+    		<h:column>
+    			<f:facet name="header">
+    				password
+    			</f:facet>
+    				#{u.password}
+    		</h:column>
+    		
+    	</h:dataTable>
+
+ 		<h2>Add New User</h2>
+ 		<h:form>
+
+ 			<h:panelGrid columns="3">
+
+				first Name :
+				<h:inputText id="firstName" value="#{userBean.firstName}"
+					size="20" required="true"
+					label="firstName" >
+				</h:inputText>
+
+				<h:message for="firstName" style="color:red" />
+				
+				
+				last Name :
+				<h:inputText id="lastName" value="#{userBean.lastName}"
+					size="20" required="true"
+					label="lastName" >
+				</h:inputText>
+
+				<h:message for="lastName" style="color:red" />
+				
+				
+				email :
+				<h:inputText id="email" value="#{userBean.email}"
+					size="20" required="true"
+					label="email" >
+				</h:inputText>
+
+				<h:message for="email" style="color:red" />
+				
+				
+				password :
+				<h:inputText id="password" value="#{userBean.password}"
+					size="20" required="true"
+					label="password" >
+				</h:inputText>
+
+				<h:message for="password" style="color:red" />
+				
+			</h:panelGrid>
+
+			<h:commandButton value="Submit" action="#{userBean.addUser()}" />
+
+ 		</h:form>
+
+    </h:body>
+
+</html>
