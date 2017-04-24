@@ -7,41 +7,17 @@
   <!--LoaderListener begin -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/jpaContext.xml</param-value>
+		<param-value>classpath:/applicationContext.xml</param-value>
 	</context-param>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- LoaderListener end -->
-	<!-- Spring mvc  -->
-<!-- 	  <servlet>
-			<servlet-name>mainServlet</servlet-name>
-			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-			<init-param>
-				<param-name>contextConfigLocation</param-name>
-				<param-value>/WEB-INF/config/servlet-config.xml</param-value>
-			</init-param>
-		</servlet>
 	
-		<servlet-mapping>
-			<servlet-name>mainServlet</servlet-name>
-			<url-pattern>*.html</url-pattern>
-		</servlet-mapping> -->
-	
-	  <!-- JSF  -->
-	  <!-- JSF Mapping -->
-	 <welcome-file-list>
-      <!-- <welcome-file>faces/home.xhtml</welcome-file> -->
+	<welcome-file-list>
        <welcome-file>faces/default.xhtml</welcome-file>
    </welcome-file-list>
-	
-   <!-- 
-      FacesServlet is main servlet responsible to handle all request. 
-      It acts as central controller.
-      This servlet initializes the JSF components before the JSP is displayed.
-   -->
-	
+   
    <servlet>
       <servlet-name>Faces Servlet</servlet-name>
       <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>

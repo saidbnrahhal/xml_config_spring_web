@@ -45,6 +45,10 @@ public class UserBean {
 		user.setLastName(getLastName());
 		user.setPassword(getPassword());
  		userService.addUser(user);
+ 		firstName ="";
+ 		lastName ="";
+ 		email="";
+ 		password="";
 		LOGGER.error("adding a new user : "+user.toString());
 
 	};
